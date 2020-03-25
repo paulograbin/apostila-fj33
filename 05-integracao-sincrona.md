@@ -56,7 +56,7 @@ Todo recurso tem um endereço, uma **URL** (_Uniform Resource Locator_). Por exe
 
 https://cursos.alura.com.br/forum/subcategoria-java/todos/1
 
-> URL é um conceito da Internet e não só da Web. A especificação inicial foi feita na [RFC 1738](https://tools.ietf.org/html/rfc1738) (BERNES-LEE et al., 1994) pela IETF. Podemos ter URLs para recursos disponíveis por FTP, SMTP ou AMQP. Por exemplo, uma URL de conexão com o RabbitMQ que usaremos mais adiante no curso:
+> URL é um conceito da Internet e não só da Web. A especificação inicial foi feita na [RFC 1738](https://tools.ietf.org/html/rfc1738) (BERNES-LEE et al., 1994) pela IETF. Podemos ter URLs para recursos disponíveis por FTP, SMTP ou AMQP. Por exemplo, uma URL de conexão com o RabbitMQ que usaremos mais adiante:
 >
 > `amqp://eats:caelum123@rabbitmq:5672`
 >
@@ -764,14 +764,14 @@ Observação: pensando em design de código, será que os métodos auxiliares `t
 
 1. Interrompa o monólito e o serviço de distância.
 
-  Em um terminal, vá até a branch `cap6-integracao-monolito-distancia-com-rest-template` dos projetos `fj33-eats-monolito-modular` e `fj33-eats-distancia-service`:
+  Em um terminal, vá até a branch `cap5-integracao-monolito-distancia-com-rest-template` dos projetos `fj33-eats-monolito-modular` e `fj33-eats-distancia-service`:
 
   ```sh
   cd ~/Desktop/fj33-eats-monolito-modular
-  git checkout -f cap6-integracao-monolito-distancia-com-rest-template
+  git checkout -f cap5-integracao-monolito-distancia-com-rest-template
   
   cd ~/Desktop/fj33-eats-distancia-service
-  git checkout -f cap6-integracao-monolito-distancia-com-rest-template
+  git checkout -f cap5-integracao-monolito-distancia-com-rest-template
   ```
 
   Suba o monólito executando a classe `EatsApplication` e o serviço de distância por meio da classe `EatsDistanciaServiceApplication`.
@@ -788,7 +788,7 @@ Observação: pensando em design de código, será que os métodos auxiliares `t
   
   Aprove o novo restaurante. O serviço de distância deve ter sido chamado. Veja nos logs.
 
-  No diretório do `docker-compose.yml`, acesse o database de distância no MongoDB com o Mongo Shell:
+  No diretório do `docker-compose.yml`, o Desktop, acesse o database de distância no MongoDB com o Mongo Shell:
 
   ```sh
   cd ~/Desktop
@@ -939,14 +939,14 @@ public class PagamentoController {
 
 1. Interrompa o monólito e o serviço de pagamentos.
 
-  Em um terminal, vá até a branch `cap6-integracao-pagamento-monolito-com-feign` dos projetos `fj33-eats-monolito-modular` e `fj33-eats-pagamento-service`:
+  Em um terminal, vá até a branch `cap5-integracao-pagamento-monolito-com-feign` dos projetos `fj33-eats-monolito-modular` e `fj33-eats-pagamento-service`:
 
   ```sh
   cd ~/Desktop/fj33-eats-monolito-modular
-  git checkout -f cap6-integracao-pagamento-monolito-com-feign
+  git checkout -f cap5-integracao-pagamento-monolito-com-feign
   
   cd ~/Desktop/fj33-eats-pagamento-service
-  git checkout -f cap6-integracao-pagamento-monolito-com-feign
+  git checkout -f cap5-integracao-pagamento-monolito-com-feign
   ```
 
   Suba o monólito executando a classe `EatsApplication` e o serviço de pagamentos por meio da classe `EatsPagamentoServiceApplication`.
@@ -1881,11 +1881,11 @@ Obteremos no response:
 
 Na palestra [PB vs. Thrift vs. Avro](https://pt.slideshare.net/IgorAnishchenko/pb-vs-thrift-vs-avro) (ANISHCHENKO, 2012), Igor Anishchenko demonstra que o protocolo HTTP/1.1 com representações como XML e JSON pode ser ineficiente se comparado com alternativas binárias como:
 
-- Apache Thrift, usado no Facebook e em projetos com o Hadoop
-- Protocol Buffers, usado na Google
-- RMI, que é parte da plataforma Java
+- [Apache Thrift](https://thrift.apache.org/), usado no Facebook e em projetos com o Hadoop
+- [Protocol Buffers](https://developers.google.com/protocol-buffers), usado na Google
+- [RMI](https://docs.oracle.com/javase/tutorial/rmi/overview.html), que é parte da plataforma Java
 
-Anishchenko, ao serializar um objeto Curso com 5 objetos Pessoa e com um objeto Telefone associados, mostra o tamanho:
+Anishchenko, ao serializar um objeto `Curso` com 5 objetos `Pessoa` e com um objeto `Telefone` associados, mostra o tamanho:
 
 - Protocol Buffers: 250
 - Thrift TCompactProcotol: 278
@@ -1894,13 +1894,13 @@ Anishchenko, ao serializar um objeto Curso com 5 objetos Pessoa e com um objeto 
 - HTTP/XML: 836
 - RMI: 905
 
-O protocolo Thrift TBinaryProtocol é otimizado em termos de processamento e o Thrift TCompactProcotol, em tamanho. 
+O protocolo Thrift `TBinaryProtocol` é otimizado em termos de processamento e o Thrift TCompactProcotol, em tamanho. 
 
 É interessante notar que a serialização RMI foi a menos eficiente em termos de tamanho. Não é um formato otimizado.
 
-Os formatos binários Thrift TCompactProcotol e Protocol Buffers apresentam um tamanho de cerca de metade do HTTP/JSON para esse caso simples.
+Os formatos binários Thrift `TCompactProcotol` e Protocol Buffers apresentam um tamanho de cerca de metade do HTTP/JSON para esse caso simples.
 
-Então, Anishchenko compara 10000 chamadas de uma busca por uma listagem de códigos de Curso e, em seguida, os dados do Curso associado a esse código. São avaliados o tempo de resposta, porcentagem de uso de CPU no servidor e no cliente.
+Então, Anishchenko compara 10000 chamadas de uma busca por uma listagem de códigos de `Curso` e, em seguida, os dados do `Curso` associado a esse código. São avaliados o tempo de resposta, porcentagem de uso de CPU no servidor e no cliente.
 
 Os resultados para o tempo de resposta:
 
@@ -1936,7 +1936,7 @@ Pelos dados de Anishchenko, Thrift toma mais processamento do servidor, suavizan
 
 Uma diferença importante entre o Thrift e Protocol Buffers é que, apesar de ambos oferecerem maneira de definir interfaces de serviços, apenas o Thrift fornece implementações de clientes e servidores. Ao usar Protocol Buffers, é necessário implementar manualmente o servidor e o cliente. Recentemente, o Google abriu o código de um projeto que já fornece essas implementações, que veremos logo adiante.
 
-Outra alternativa mencionada por Anishchenko é o Apache Avro, usado pelo Apache Kafka, entre outros projetos.
+Outra alternativa mencionada por Anishchenko é o [Apache Avro](https://avro.apache.org/), usado pelo Apache Kafka, entre outros projetos.
 
 ### Quando usar procotolos binários?
 

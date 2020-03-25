@@ -2,7 +2,7 @@
 
 ## Peça sua comida com o Caelum Eats
 
-Nesse curso, usaremos como exemplo o Caelum Eats: uma aplicação de entrega de comida nos moldes de soluções conhecidas no mercado.
+Usaremos como exemplo o Caelum Eats: uma aplicação de entrega de comida nos moldes de soluções conhecidas no mercado.
 
 Há 3 perfis de usuário:
 
@@ -136,7 +136,7 @@ Também é tarefa do administrador do Caelum Eats revisar o cadastro de novos re
 
 O back-end do Caelum Eats provẽ uma API REST. A porta usada é a `8080`.
 
-O Banco de Dados utilizado é o MySQL, na versão 5.6 e executado na porta `3306`.
+O Banco de Dados utilizado é o MySQL, na versão 5.7 e executado na porta `3307`.
 
 É implementado com as seguintes tecnologias:
 
@@ -174,11 +174,19 @@ São utilizados alguns componentes open-source:
   git clone https://gitlab.com/aovs/projetos-cursos/fj33-eats-monolito.git
   ```
 
-2. Abra o Eclipse, definindo como workspace `/home/<usuario-do-curso>/workspace-monolito`. Troque `<usuario-do-curso>` pelo login utilizado no curso.
-3. No Eclipse, acesse _File > Import > Existing Maven Projects_ e clique em _Next_. Em _Root Directory_, aponte para o diretório clonado anteriormente.
-4. Acesse a classe `EatsApplication` e a execute com _CTRL+F11_. O banco de dados será criado automaticamente e alguns dados serão populados.
-5. Teste a URL `http://localhost:8080/restaurantes/1` pelo navegador e verifique se um JSON com os dados de um restaurante foi retornado.
-6. Analise o código. Veja:
+2. O MySQL será executado pelo Docker Compose. Para isso, baixe e execute o `docker-compose.yml` para o seu Desktop com os seguintes comandos:
+
+  ```sh
+  cd ~/Desktop/
+  curl https://gitlab.com/snippets/1954188/raw > docker-compose.yml
+  docker-compose up -d
+  ```
+
+3. Abra o Eclipse, definindo como workspace `/home/<SEU-USUARIO>/workspace-monolito`. Troque `<SEU-USUARIO>` pelo seu login.
+4. No Eclipse, acesse _File > Import > Existing Maven Projects_ e clique em _Next_. Em _Root Directory_, aponte para o diretório clonado anteriormente.
+5. Acesse a classe `EatsApplication` e a execute com _CTRL+F11_. O banco de dados será criado automaticamente e alguns dados serão populados.
+6. Teste a URL `http://localhost:8080/restaurantes/1` pelo navegador e verifique se um JSON com os dados de um restaurante foi retornado.
+7. Analise o código. Veja:
 
   - as entidades de negócio
   - os recursos e suas respectivas URIs
@@ -186,32 +194,27 @@ São utilizados alguns componentes open-source:
 
 ## Exercício: Executando o front-end
 
-1. Baixe para o Desktop o projeto do front-end, usando o Git, com os comandos:
+1. Em um Terminal, baixe para o Desktop o projeto do front-end, usando o Git, com os comandos:
 
   ```sh
   cd ~/Desktop
   git clone https://gitlab.com/aovs/projetos-cursos/fj33-eats-ui.git
   ```
 
-2. Abra um Terminal e digite:
+2. Na pasta do front-end do projeto, instale as dependências com o comando:
 
   ```sh
   cd ~/Desktop/fj33-eats-ui
-  ```
-
-3. Instale as dependências do front-end com o comando:
-
-  ```sh
   npm install
   ```
 
-4. Execute a aplicação com o comando:
+3. Execute a aplicação com o comando:
 
   ```sh
   ng serve
   ```
 
-5. Abra um navegador e teste a URL: `http://localhost:4200`. Explore o projeto, fazendo um pedido, confirmando um pedido efetuado, cadastrando um novo restaurante e aprovando-o. Em caso de dúvidas, peça ajuda ao instrutor.
+4. Abra um navegador e teste a URL: `http://localhost:4200`. Explore o projeto, fazendo um pedido, confirmando um pedido efetuado, cadastrando um novo restaurante e aprovando-o. Em caso de dúvidas, peça ajuda ao instrutor.
 
 ## Um negócio em expansão
 
@@ -221,7 +224,7 @@ Atualmente, só são aceitos cartões de débito, crédito e vale refeição. En
 
 Entre especialistas de negócio, desenvolvedores e operações, a equipe passou a ter algumas dezenas de pessoas, o que complica incrivelmente a comunicação.
 
-Os desenvolvedores passaram a reclamar do código, dizendo que é difícil de entender e de encontrar onde devem ser implementadas manutenções, correções e novas funcionalidades.
+Os desenvolvedores passaram a reclamar do código, dizendo que é difícil de entender e encontrar onde devem ser implementadas manutenções, correções e novas funcionalidades.
 
 Há ainda problemas de performance, especialmente no cálculo dos restaurantes mais próximos ao CEP informado por um cliente. Essa degradação da performance acaba afetando todas as outras partes da aplicação.
 

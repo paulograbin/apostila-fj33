@@ -40,6 +40,8 @@ CALÇADO, Phil. 2018. Em: https://twitter.com/pcalcado/status/963183090339385345
 
 CHRISTENSEN, Ben. _Optimizing the Netflix API._ 2013. Em: https://medium.com/netflix-techblog/optimizing-the-netflix-api-5c9ac715cf19
 
+CLEMSON, Toby. _Testing Strategies in a Microservice Architecture._ 2014. Em: https://martinfowler.com/articles/microservice-testing/
+
 COCKCROFT, Adrian. _Patterns for Continuous Delivery, High Availability, DevOps & Cloud Native Open Source with NetflixOSS._ 2013. Em: https://www.slideshare.net/adrianco/yowworkshop-131203193626phpapp01-1
 
 COHEN, Mickey. _Zuul @ Netflix._ SpringOne Platform, 2016. Em: https://www.slideshare.net/MikeyCohen1/zuul-netflix-springone-platform
@@ -56,6 +58,8 @@ DUSSEAULT, Lisa; SNELL James M. _PATCH Method for HTTP._ Internet Engineering Ta
 
 EVANS, Eric. _Domain-Driven Design: Tackling Complexity in the Heart of Software._ Addison-Wesley Professional. 2003. 560 p. Em: https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215
 
+FEATHERS, Michael. _The Deep Synergy Between Testability and Good Design_ 2007. Em: https://michaelfeathers.typepad.com/michael_feathers_blog/2007/09/the-deep-synerg.html
+
 FEATHERS, Michael. _Microservices Until Macro Complexity._ 2014. Em: https://michaelfeathers.silvrback.com/microservices-until-macro-complexity
 
 FERREIRA, Rodrigo. _REST: Princípios e boas práticas._ 2017. Em: https://blog.caelum.com.br/rest-principios-e-boas-praticas
@@ -66,11 +70,25 @@ FIELDING, Roy. _REST APIs must be hypertext-driven._ 2008. Em: https://roy.gbiv.
 
 FOOTE, Brian; YODER, Joseph. _Big Ball Of Mud._ 1999. Em: http://www.laputan.org/mud/mud.html
 
+FOWLER, Martin et al. Refactoring: Improving the Design of Existing Code. Addison-Wesley Professional, 1999. 464 p. Em: https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/.
+
 FOWLER, Martin. _Patterns of Enterprise Application Architecture._ Addison-Wesley Professional, 2002. 560 p. Em: https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420
 
 FOWLER, Martin. _StranglerFigApplication._ 2004. Em: https://martinfowler.com/bliki/StranglerFigApplication.html
 
+FOWLER, Martin. _EventSourcing._ 2005. Em: https://martinfowler.com/eaaDev/EventSourcing.html
+
+FOWLER, Martin. _Detestable._ 2005b. Em: https://martinfowler.com/bliki/Detestable.html
+
+FOWLER, Martin. _TestDouble._ 2006. Em: https://www.martinfowler.com/bliki/TestDouble.html
+
 FOWLER, Martin. _Richardson Maturity Model._ 2010. Em: https://martinfowler.com/articles/richardsonMaturityModel.html
+
+FOWLER, Martin. _CQRS._ 2011. Em: https://martinfowler.com/bliki/CQRS.html
+
+FOWLER, Martin. _BroadStackTest._ 2013. Em: https://www.martinfowler.com/bliki/BroadStackTest.html
+
+FOWLER, Martin. _ThresholdTest._ 2013b. Em: https://www.martinfowler.com/bliki/ThresholdTest.html
 
 FOWLER, Martin; LEWIS, James. _Microservices: a definition of this new technical term._ 2014. Em: https://martinfowler.com/articles/microservices.html
 
@@ -78,19 +96,37 @@ FOWLER, Martin. _Microservices and the First Law of Distributed Objects._ 2014a.
 
 FOWLER, Martin. _MicroservicePrerequisites._ 2014b. Em: https://martinfowler.com/bliki/MicroservicePrerequisites.html
 
+FOWLER, Martin. _UnitTest._ 2014c. Em: https://martinfowler.com/bliki/UnitTest.html
+
 FOWLER, Martin. _Microservice Trade-Offs._ 2015a. Em: https://martinfowler.com/articles/microservice-trade-offs.html
 
 FOWLER, Martin. _MicroservicePremium._ 2015b. Em: https://martinfowler.com/bliki/MicroservicePremium.html
 
 FOWLER, Martin. _MonolithFirst._ 2015c. Em: https://martinfowler.com/bliki/MonolithFirst.html
 
+FOWLER, Martin. _Integration Test._ 2018. Em: https://martinfowler.com/bliki/IntegrationTest.html
+
+FREEMAN, Steve et al. _Mock Roles, not Objects._  2004. Em: http://jmock.org/oopsla2004.pdf 
+
 GEERS, Michael. _Micro Frontends._ 2017. Em: https://micro-frontends.org/
 
 GONIGBERG, Arthur. _Zuul's Journey to Non-Blocking._ Strange Loop, 2017. Em: https://www.youtube.com/watch?v=2oXqbLhMS_A
 
+GRAY, Jim; REUTER, Andreas. _Transaction Processing: Concepts and Techniques._ Morgan Kaufmann, 1992. 1070 p. Em: https://books.google.com.br/books?id=VFKbCgAAQBAJ&pg=PA7&dq=marriage+two+phase+commit
+
 GRIGORIK, Ilya. _High Performance Browser Networking._ O'Reilly, 2013. 400 p. Em: https://hpbn.co/
 
+HARDT, Dick. _The OAuth 2.0 Authorization Framework._ Internet Engineering Task Force (IETF), 2012. Em: https://tools.ietf.org/html/rfc6749
+
+HOHPE, Gregor; WOOLF, Bobby. _Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions._ Addison-Wesley Professional, 2003. 741 p. Em: https://www.amazon.com.br/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683
+
 JACOBSON, Ivar. _Object Oriented Software Engineering: A Use-Case Driven Approach._ Addison-Wesley Professional, 1992. 552 p. Em: https://www.amazon.com/Object-Oriented-Software-Engineering-Approach/dp/0201544350
+
+JONES, Michael et al. _JSON Web Token (JWT)._ Internet Engineering Task Force (IETF), 2015. Em: https://tools.ietf.org/html/rfc7519
+
+JONES, Michael et al. _JSON Web Signature (JWS)._ Internet Engineering Task Force (IETF), 2015b. Em: https://tools.ietf.org/html/rfc7515
+
+JONES, Michael et al. _JSON Web Encryption (JWE)._ Internet Engineering Task Force (IETF), 2015c. Em: https://tools.ietf.org/html/rfc7516
 
 JOSUTTIS, Nicholai. _SOA in Practice: The Art of Distributed System Design._ O'Reilly Media, 2007. 344 p. Em: https://www.amazon.com.br/Soa-Practice-Distributed-System-Design/dp/0596529554
 
@@ -100,11 +136,15 @@ KNOERNSCHILD, Kirk. _Java Application Architecture: Modularity Patterns with Exa
 
 KRIENS, Peter. _µServices._ 2010. Em: https://blog.osgi.org/2010/03/services.html
 
+LACERDA, Raphael. _Morte à sessão! Entenda esse tal de stateless session com tokens._ 2017. Em: https://blog.caelum.com.br/morte-a-sessao-entenda-esse-tal-de-stateless-session-com-tokens/
+
 LAMPORT, Leslie. _distribution._ 1987. Em: https://lamport.azurewebsites.net/pubs/distributed-system.txt
 
 LEWIS, James. _Episode 213: James Lewis on Microservices._ 2014. Em: https://www.se-radio.net/2014/10/episode-213-james-lewis-on-microservices/
 
 MACCORMACK, Alan et al. _Exploring the Duality between Product and Organizational Architectures: A Test of the “Mirroring” Hypothesis._ 2008. Em: https://www.hbs.edu/faculty/Publication%20Files/08-039_1861e507-1dc1-4602-85b8-90d71559d85b.pdf
+
+MAJORS, Charity. _Observability — A 3-Year Retrospective._ 2019. Em: https://thenewstack.io/observability-a-3-year-retrospective/
 
 MARTIN, Robert Cecil. _Clean Code: A Handbook of Agile Software Craftsmanship._  Prentice Hall, 2009. 464 p. Em: https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
 
@@ -121,6 +161,8 @@ NELSON, Teodhor Holm. _Complex Information Processing: A File Structure for the 
 NEWMAN, Sam. _Building Microservices: Designing Fine-Grained Systems._ O'Reilly, 2015. 280 p. Em: https://www.oreilly.com/library/view/building-microservices/9781491950340/
 
 NEWMAN, Sam. _Pattern: Backends For Frontends._ 2015b. Em: https://samnewman.io/patterns/architectural/bff/
+
+NEWMAN, Sam. _Building Secure Microservices Architectures._ 2018. Em: https://learning.oreilly.com/learning-paths/learning-path-building/9781492041481/
 
 NEWMAN, Sam. _Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith._ O'Reilly, 2019. Early Release. 284 p. Em: https://learning.oreilly.com/library/view/monolith-to-microservices/9781492047834/
 
@@ -154,6 +196,8 @@ SADALAGE, Pramod; AMBER, Scott. _Refactoring Databases: Evolutionary Database De
 
 SARDINHA, Renato. _Introdução ao Change Data Capture (CDC)._ 2019. Em: https://elo7.dev/cdc-parte-1/
 
+SRIDHARAN, Cindy. _Distributed Systems Observability._ O'Reilly, 2018. Em: https://learning.oreilly.com/library/view/distributed-systems-observability/9781492033431/
+
 SIMONS, Matthew; LEROY, Jonny. _Contending with Creaky Platforms CIO._ Cutter IT Journal, Dec. 2010. Em: http://jonnyleroy.com/2011/02/03/dealing-with-creaky-legacy-platforms/
 
 SPOLSKY, Joel. _Things You Should Never Do, Part I._ 2000. Em: https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/
@@ -165,6 +209,14 @@ TALWAR, Varun. _gRPC: a true internet-scale RPC framework is now 1.0 and ready f
 TALEB, Nassim. _Antifragile: Things That Gain from Disorder._ Random House, 2012. 519 p. Em: https://www.amazon.com.br/Antifragile-Things-That-Gain-Disorder/dp/1400067820/
 
 TILKOV, Stefan. _Don't start with a monolith: ... when your goal is a microservices architecture._ 2015. Em: https://martinfowler.com/articles/dont-start-monolith.html
+
+VENEZIA, Paul. _Murder in the Amazon cloud._ 2014. Em: https://www.infoworld.com/article/2608076/murder-in-the-amazon-cloud.html
+
+VERNON, Vaughn. _Implementing Domain-Driven Design._ Addison-Wesley Professional, 2013. 656 p. Em: https://www.amazon.com.br/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577
+
+VERNON, Vaughn. _Domain-Driven Design Distilled._ Addison-Wesley Professional, 2016. 176 p. Em: https://www.amazon.com.br/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420
+
+VOCKE, Ham. _The Practical Test Pyramid_. 2018. Em: https://martinfowler.com/articles/practical-test-pyramid.html
 
 VOEGELS, Werner. _A Conversation with Werner Voegels._ ACM Queue, Mai. 2006. Em: https://dl.acm.org/doi/pdf/10.1145/1142055.1142065?download=true
 

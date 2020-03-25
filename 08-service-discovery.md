@@ -90,7 +90,7 @@ Do lado do cliente, há a necessidade de uma consulta ao Service Registry para o
 
 ## Eureka
 
-Nesse curso, usaremos o Eureka, que é integrado com o ecossistema Spring através do projeto Spring Cloud Netflix Eureka. Para implementar o Service Registry, será utilizado o projeto Spring Cloud Netflix Eureka Server, disponível pelo artefato `spring-cloud-starter-netflix-eureka-server`. Por padrão, o Eureka Serve usa a porta `8761`.
+Usaremos o Eureka, que é integrado com o ecossistema Spring através do projeto Spring Cloud Netflix Eureka. Para implementar o Service Registry, será utilizado o projeto Spring Cloud Netflix Eureka Server, disponível pelo artefato `spring-cloud-starter-netflix-eureka-server`. Por padrão, o Eureka Serve usa a porta `8761`.
 
 Para implementar o pattern _Self Registration_, as instâncias dos serviços precisam invocar a API do Service Registry. No caso ecossistema Spring, há o Spring Cloud Netflix Eureka Client, disponível no artefato `spring-cloud-starter-netflix-eureka-client`. Essa biblioteca que provê uma maneira baseada em anotações de uma instância registrar-se no Service Registry.
 
@@ -98,7 +98,7 @@ Para clientes feitos em linguagens que não rodam na JVM, o Eureka Server dispon
 
 A biblioteca Eureka Client implementa também o pattern _Client-Side Discovery_.
 
-No curso usaremos, no lado do cliente, o Spring Cloud Netflix Eureka Client por meio do artefato `spring-cloud-starter-netflix-eureka-client`. O Eureka Client fica responsável por obter a lista de instâncias registradas e disponíveis no Eureka Server. O Load Balancing fica por conta do Ribbon, que vimos em capítulo anterior.
+Usaremos, no lado do cliente, o Spring Cloud Netflix Eureka Client por meio do artefato `spring-cloud-starter-netflix-eureka-client`. O Eureka Client fica responsável por obter a lista de instâncias registradas e disponíveis no Eureka Server. O Load Balancing fica por conta do Ribbon, que vimos em capítulo anterior.
 
 O API Gateway, o Monólito e os serviços de Pagamentos e Distância terão o Spring Cloud Netflix Eureka Client e serão registrados no Eureka Server. O Ribbon obterá do Eureka Client a lista de instâncias que será usada no Load Balancing. As configurações de lista de servidores poderão ser removidas do `application.properties`!
 
@@ -385,20 +385,20 @@ eureka.client.serviceUrl.defaultZone=${EUREKA_URI:http://localhost:8761/eureka/}
 
 1. Interrompa a execução do monólito, dos serviços de pagamentos e distância e do API Gateway.
 
-  Faça o checkout da branch `cap9-self-registration-no-eureka-server` nos projetos do monólito, do API Gateway e dos serviço de pagamentos e distância:
+  Faça o checkout da branch `cap8-self-registration-no-eureka-server` nos projetos do monólito, do API Gateway e dos serviço de pagamentos e distância:
 
   ```sh
   cd ~/Desktop/fj33-eats-monolito-modular
-  git checkout -f cap9-self-registration-no-eureka-server
+  git checkout -f cap8-self-registration-no-eureka-server
 
   cd ~/Desktop/fj33-api-gateway
-  git checkout -f cap9-self-registration-no-eureka-server
+  git checkout -f cap8-self-registration-no-eureka-server
 
   cd ~/Desktop/fj33-eats-distancia-service
-  git checkout -f cap9-self-registration-no-eureka-server
+  git checkout -f cap8-self-registration-no-eureka-server
 
   cd ~/Desktop/fj33-eats-pagamento-service
-  git checkout -f cap9-self-registration-no-eureka-server
+  git checkout -f cap8-self-registration-no-eureka-server
   ```
 
 2. Pare as instâncias do serviço de distância.
@@ -488,17 +488,17 @@ r̶i̶b̶b̶o̶n̶.̶e̶u̶r̶e̶k̶a̶.̶e̶n̶a̶b̶l̶e̶d̶=̶f̶a̶l̶s̶e�
 
 1. Pare o monólito, o serviço de pagamentos e o API Gateway.
 
-  Obtenha o código da branch `cap9-client-side-discovery` dos repositórios do monólito, do API Gateway e do serviço de pagamentos:
+  Obtenha o código da branch `cap8-client-side-discovery` dos repositórios do monólito, do API Gateway e do serviço de pagamentos:
 
   ```sh
   cd ~/Desktop/fj33-eats-monolito-modular
-  git checkout -f cap9-client-side-discovery
+  git checkout -f cap8-client-side-discovery
 
   cd ~/Desktop/fj33-api-gateway
-  git checkout -f cap9-client-side-discovery
+  git checkout -f cap8-client-side-discovery
 
   cd ~/Desktop/fj33-eats-pagamento-service
-  git checkout -f cap9-client-side-discovery
+  git checkout -f cap8-client-side-discovery
   ```
 
   Execute novamente o monólito, o serviço de pagamentos e o API Gateway.
@@ -534,7 +534,6 @@ Mesmo com apenas um servidor, é necessário configurarmos o endereço do cluste
 ```yaml
   consul:
     image: consul:1.5
-    restart: on-failure
     ports:
       - "8500:8500"
       - "8600:8600"
@@ -563,7 +562,7 @@ spring.cloud.consul.port=8500
 spring.cloud.consul.discovery.register-health-check=false
 ```
 
-Como ainda não vimos o conceito de _health checking_ no curso, desabilitaremos essa funcionalidade.
+Como ainda não vimos o conceito de _health checking_, desabilitaremos essa funcionalidade.
 
 Finalmente, basta adicionar a anotação `@EnableDiscoveryClient` na classe principal (ou em alguma classe de configuração):
 

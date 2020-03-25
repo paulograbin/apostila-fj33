@@ -65,6 +65,21 @@ Sam Newman, no livro [Building Microservices](https://learning.oreilly.com/libra
 
 _Microservices são serviços pequenos e autônomos que trabalham juntos._
 
+<!-- TODO
+  citar https://www.oreilly.com/ideas/should-i-use-microservices, do Sam Newman
+
+  Quando não usar Microservices:
+  - domínio ainda incipiente
+  - falta de necessidade de escalar
+  - time pequeno
+
+  Quando usar Microservices:
+  - escalar pessoas
+  - deploys independentes, minimizando downtime
+  - flexibilidade na escola de tecnologia e providers de cloud
+
+ -->
+
 ## Prós e contras de uma Arquitetura de Microservices
 
 ### PRÓ: Times Pequenos e Autônomos
@@ -164,7 +179,7 @@ A comunicação intraprocesso, com as chamadas em memória, é centenas de milha
 - Referência Cache L2: 7 ns
 - Referência à Memória Principal: 100 ns
 - Round trip dentro do mesmo data center: 500 000 ns (0,5 ms)
-- Roud trip Califórnia-Holanda: 150 000 000 ns (150 ms)
+- Round trip Califórnia-Holanda: 150 000 000 ns (150 ms)
 
 Uma versão mais atualizada e interativa dessa tabela pode ser encontrada em: https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html
 
@@ -321,7 +336,7 @@ Martin Fowler e James Lewis dizem em seu artigo sobre [Microservices](https://ma
   Alexandre: eu já trabalhei, nos idos de 2013, como analista de integração em uma grande empresa de seguros do Brasil. Haviam 5 diretorias: Seguros, Saúde, Previdência, Capitalização e Consórcios. Um serviço era basicamente uma diretoria. Portanto, tínhamos 5 serviços. Uma história interessante é que uma merge 5 empresas diferentes com sistemas feitos em COBOL, Oracle Forms + PL/SQL, SQL Server + T-SQL e até Web Services SOAP. E tudo isso tinha que ser vendido como uma coisa só, num front-end. Era usado um ESB de um desses grandes players do mercado de TI.
 -->
 
-Henrique Lobo mostra em seu artigo [Repensando micro serviços](https://www.itexto.com.br/devkico/?p=1768) que SOA como descrito pelo consórcio de padrões abertos [OASIS](https://en.wikipedia.org/wiki/OASIS_(organization) é muito parecido com o espírito dos Microservices.
+Henrique Lobo mostra em seu artigo [Repensando micro serviços](https://www.itexto.com.br/devkico/?p=1768) que SOA como descrito pelo consórcio de padrões abertos [OASIS](https://en.wikipedia.org/wiki/OASIS_%28organization%29) é muito parecido com o espírito dos Microservices.
 
 Sam Newman, em seu livro [Building Microservices](https://learning.oreilly.com/library/view/building-microservices/9781491950340/) (NEWMAN, 2015), reconhece que SOA trouxe boas ideias, mas que houve uma falta de consenso em como fazer SOA bem e dificuldade em ter uma narrativa alternativa à dos vendedores. SOA passou a ser visto como uma coleção de ferramentas e não como uma abordagem arquitetural. Ainda fala que uma Arquitetura de Microservices está para SOA assim como XP e Scrum estão para Agile: uma abordagem específica que veio de projetos reais.
 
@@ -383,7 +398,7 @@ Chris Richardson, no livro [Microservices Patterns](https://www.manning.com/book
 
 Frameworks Java como [Dropwizard](https://www.dropwizard.io/en/stable/) e [Spring Boot](https://spring.io/projects/spring-boot) são exemplos de Microservices chassis. 
 
-O [Spring Cloud](https://spring.io/projects/spring-cloud) é um conjunto de ferramentas que expandem as capacidades do Spring Boot e oferecem implementações para patterns comuns de sistemas distribuídos. Há, por exemplo, o [Spring Cloud Netflix](https://spring.io/projects/spring-cloud-netflix), que integra vários componentes da Netflix OSS com o ecossistema do Spring. Estudaremos várias das ferramentas do Spring Cloud durante o curso.
+O [Spring Cloud](https://spring.io/projects/spring-cloud) é um conjunto de ferramentas que expandem as capacidades do Spring Boot e oferecem implementações para patterns comuns de sistemas distribuídos. Há, por exemplo, o [Spring Cloud Netflix](https://spring.io/projects/spring-cloud-netflix), que integra vários componentes da Netflix OSS com o ecossistema do Spring. Estudaremos várias das ferramentas do Spring Cloud.
 
 No Java EE (ou Jakarta EE), foi criada a especificação MicroProfile, um conjunto de especificações com foco que servem como um Microservices chassis. Entre as implementações estão: [KumuluzEE](https://ee.kumuluz.com/), [Wildfly Swarm/Thorntail](https://thorntail.io/), baseado no Wildfly da JBoss/Red Hat, [Open Liberty](https://openliberty.io/), baseado no WebSphere Liberty da IBM, [Payara Micro](https://www.payara.fish/software/payara-server/payara-micro/), baseado no Payara, um fork do GlassFish, e [Apache TomEE](https://tomee.apache.org/), baseado no Tomcat.
 
@@ -463,7 +478,7 @@ Sam Newman, no livro [Building Microservices](https://learning.oreilly.com/libra
 3. Dividir o schema do BD, mantendo o código no monólito. Nesse momento, joins, foreign keys e integridade transacional já seriam perdidas. Para Newman, seria uma boa maneira de explorar a decomposição e ajustar detalhes.
 4. Só então o código seria dividido em serviços, poucos de cada vez, progressivamente
 
-Já no livro [Microservices AntiPatterns and Pitfalls](https://learning.oreilly.com/library/view/microservices-antipatterns-and/9781492042716/) (RICHARDS, 2016), Mark Richards discorda diametralmente. Richards argumenta que são muitos comuns ajustes na granularidade dos serviços no começo da migração. Podemos ter quebrado demais os serviços, ou de menos. E reagrupar os dados no BD é muito mais difícil, custoso e propenso a erros que reagrupar o código da aplicação. Para o autor, uma migração para Microservices deveria começar com o código. Assim que haja uma garantia que a granularidade do serviço está correta, os dados podem ser migrados. É importante ressaltar que manter o BD monolítico é uma solução paliativa. Richards deixa claro o risco dessa abordagem: acoplamento dos serviços pelo BD. Discutiremos essa ideia mais adiante no curso.
+Já no livro [Microservices AntiPatterns and Pitfalls](https://learning.oreilly.com/library/view/microservices-antipatterns-and/9781492042716/) (RICHARDS, 2016), Mark Richards discorda diametralmente. Richards argumenta que são muitos comuns ajustes na granularidade dos serviços no começo da migração. Podemos ter quebrado demais os serviços, ou de menos. E reagrupar os dados no BD é muito mais difícil, custoso e propenso a erros que reagrupar o código da aplicação. Para o autor, uma migração para Microservices deveria começar com o código. Assim que haja uma garantia que a granularidade do serviço está correta, os dados podem ser migrados. É importante ressaltar que manter o BD monolítico é uma solução paliativa. Richards deixa claro o risco dessa abordagem: acoplamento dos serviços pelo BD. Discutiremos essa ideia mais adiante.
 
 Já em seu novo livro [Monolith to Microservices](https://learning.oreilly.com/library/view/monolith-to-microservices/9781492047834/) (NEWMAN, 2019), Sam Newman explora diferentes abordagens para extração de serviços: pelo BD primeiro, pelo código primeiro e BD e código juntos.
 
@@ -612,9 +627,9 @@ No arquivo `src/main/resources/application.properties`, modifique a porta para `
 server.port = 8081
 
 #DATASOURCE CONFIGS
-spring.datasource.url=jdbc:mysql://localhost/eats?createDatabaseIfNotExist=true
-spring.datasource.username=<SEU USUARIO>
-spring.datasource.password=<SUA SENHA>
+spring.datasource.url=jdbc:mysql://localhost:3307/eats?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=caelum123
 
 #JPA CONFIGS
 spring.jpa.hibernate.ddl-auto=validate
@@ -622,8 +637,6 @@ spring.jpa.show-sql=true
 
 spring.jackson.serialization.fail-on-empty-beans=false
 ```
-
-Observação: `<SEU USUARIO>` e `<SUA SENHA>` devem ser trocados pelos valores do MySQL do monólito.
 
 ### Extraindo código de pagamentos do monólito
 
@@ -861,7 +874,7 @@ class CorsConfig implements WebMvcConfigurer {
 
 Faça um novo pedido, crie e confirme um pagamento. Deve funcionar!
 
-> Note apenas um detalhe: o status do pedido, exibido na tela após a confirmação do pagamento, **está _REALIZADO_ e não _PAGO_**. Isso ocorre porque removemos a chamada à classe `PedidoService`, que ainda está no módulo `eats-pedido` do monólito. Corrigiremos esse detalhe mais adiante no curso.
+> Note apenas um detalhe: o status do pedido, exibido na tela após a confirmação do pagamento, **está _REALIZADO_ e não _PAGO_**. Isso ocorre porque removemos a chamada à classe `PedidoService`, que ainda está no módulo `eats-pedido` do monólito. Corrigiremos esse detalhe mais adiante.
 
 ### Apagando código de pagamentos do monólito
 
@@ -908,7 +921,7 @@ Extraímos nosso primeiro serviço do monólito. A evolução do código de paga
   git clone https://gitlab.com/aovs/projetos-cursos/fj33-eats-pagamento-service.git
   ```
 
-  Vamos criar um workspace do Eclipse separado para os Microservices, mantendo aberto o workspace com o monólito. Para isso, clique no ícone do Eclipse da área de trabalho. Em _Workspace_, defina `/home/<usuario-do-curso>/workspace-microservices`, onde `<usuario-do-curso>` é o login do curso.
+  Vamos criar um workspace do Eclipse separado para os Microservices, mantendo aberto o workspace com o monólito. Para isso, clique no ícone do Eclipse da área de trabalho. Em _Workspace_, defina `/home/<SEU-USUARIO>/workspace-microservices`, onde `<SEU-USUARIO>` é o seu login.
 
   No Eclipse, importe o projeto `fj33-eats-pagamento-service`, usando o menu _File > Import > Existing Maven Projects_.
 
@@ -924,7 +937,7 @@ Extraímos nosso primeiro serviço do monólito. A evolução do código de paga
     http://localhost:8081/pagamentos
   ```
 
-  Para que você não precise digitar muito, o comando acima está disponível em: https://gitlab.com/snippets/1859389
+  Para que você não precise digitar muito, o comando anterior está disponível em: https://gitlab.com/snippets/1859389
 
   No comando acima, usamos as seguintes opções do cURL:
 
@@ -955,8 +968,12 @@ Extraímos nosso primeiro serviço do monólito. A evolução do código de paga
   Usando o id retornado no passo anterior, teste a confirmação do pagamento pelo cURL, com o seguinte comando:
 
   ```sh
-  curl -X PUT -i http://localhost:8081/pagamentos/7
+  curl -X PUT -i http://localhost:8081/pagamentos/<ID-DO-PAGAMENTO>
   ```
+
+  O comando anterior pode ser encontrado em: https://gitlab.com/snippets/1954931
+
+  Troque `<ID-DO-PAGAMENTO>` pelo id do pagamento retornado no passo anterior.
 
   Você deve obter uma resposta semelhante a:
 
@@ -1001,7 +1018,7 @@ Extraímos nosso primeiro serviço do monólito. A evolução do código de paga
 
   Acesse `http://localhost:4200` e realize um pedido. Tente criar um pagamento.
 
-  Observe que, após a confirmação do pagamento, o status do pedido **está _REALIZADO_ e não _PAGO_**. Isso ocorre porque removemos a chamada à classe `PedidoService`, cujo código ainda está no monólito. Corrigiremos esse detalhe mais adiante no curso.
+  Observe que, após a confirmação do pagamento, o status do pedido **está _REALIZADO_ e não _PAGO_**. Isso ocorre porque removemos a chamada à classe `PedidoService`, cujo código ainda está no monólito. Corrigiremos esse detalhe mais adiante.
 
 ## Criando um Microservice de distância
 
@@ -1042,9 +1059,9 @@ Edite o arquivo `src/main/resources/application.properties`, modificando a porta
 server.port = 8082
 
 #DATASOURCE CONFIGS
-spring.datasource.url=jdbc:mysql://localhost/eats?createDatabaseIfNotExist=true
-spring.datasource.username=<SEU USUARIO>
-spring.datasource.password=<SUA SENHA>
+spring.datasource.url=jdbc:mysql://localhost:3307/eats?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=caelum123
 
 #JPA CONFIGS
 spring.jpa.hibernate.ddl-auto=validate
@@ -1052,8 +1069,6 @@ spring.jpa.show-sql=true
 
 spring.jackson.serialization.fail-on-empty-beans=false
 ```
-
-Troque `<SEU USUARIO>` e `<SUA SENHA>` pelos valores do BD.
 
 ###  Extraindo código de distância do monólito
 
@@ -1367,6 +1382,8 @@ Ufa! Mais um serviço extraído do monólito. Em um projeto real, isso seria fei
   curl -i http://localhost:8082/restaurantes/mais-proximos/71503510
   ```
 
+  O comando anterior pode ser encontrado em: https://gitlab.com/snippets/1954938
+
   A resposta será algo como:
 
   ```txt
@@ -1391,6 +1408,8 @@ Ufa! Mais um serviço extraído do monólito. Em um projeto real, isso seria fei
   curl -i http://localhost:8082/restaurantes/mais-proximos/71503510/tipos-de-cozinha/1
   ```
 
+  O comando anterior está disponível em: https://gitlab.com/snippets/1954941
+
   A resposta será semelhante a:
 
   ```txt
@@ -1411,6 +1430,8 @@ Ufa! Mais um serviço extraído do monólito. Em um projeto real, isso seria fei
   ```sh
   curl -i http://localhost:8082/restaurantes/71503510/restaurante/1
   ```
+
+  O comando anterior pode ser encontrado em: https://gitlab.com/snippets/1954942
 
   Teremos um resultado parecido com:
 

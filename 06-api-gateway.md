@@ -228,11 +228,11 @@ export class RestauranteService {
 
   Note que as URLs anteriores, apesar de serem invocados no API Gateway, invocam o serviço de pagamento, o de distância e o monólito, respectivamente.
 
-3. Vá até a branch `cap7-ui-chama-api-gateway` do projeto `fj33-eats-ui`:
+3. Vá até a branch `cap6-ui-chama-api-gateway` do projeto `fj33-eats-ui`:
 
   ```sh
   cd ~/Desktop/fj33-eats-ui
-  git checkout -f cap7-ui-chama-api-gateway
+  git checkout -f cap6-ui-chama-api-gateway
   ```
 
 4. Com o monólito, os serviços de pagamentos e distância e o API Gateway no ar, suba o front-end por meio do comando `ng serve`.
@@ -261,11 +261,11 @@ zuul.sensitiveHeaders=
 
 1. Pare o API Gateway.
 
-  Obtenha o código da branch `cap7-cabecalhos-sensiveis-no-zuul` do projeto `fj33-api-gateway`:
+  Obtenha o código da branch `cap6-cabecalhos-sensiveis-no-zuul` do projeto `fj33-api-gateway`:
 
   ```sh
   cd ~/Desktop/fj33-api-gateway
-  git checkout -f cap7-cabecalhos-sensiveis-no-zuul
+  git checkout -f cap6-cabecalhos-sensiveis-no-zuul
   ```
 
   Execute a classe `ApiGatewayApplication`. Zuul no ar!
@@ -665,11 +665,11 @@ Como apenas o API Gateway será chamado diretamente pelo navegador e não há re
 
 1. Pare o API Gateway.
 
-  Faça o checkout da branch `cap7-api-composition-no-api-gateway` do projeto `fj33-api-gateway`:
+  Faça o checkout da branch `cap6-api-composition-no-api-gateway` do projeto `fj33-api-gateway`:
 
   ```sh
   cd ~/Desktop/fj33-api-gateway
-  git checkout -f cap7-api-composition-no-api-gateway
+  git checkout -f cap6-api-composition-no-api-gateway
   ```
 
   Certifique-se que o monólito e o serviço de distância estejam no ar.
@@ -703,22 +703,22 @@ Como apenas o API Gateway será chamado diretamente pelo navegador e não há re
 
   ```sh
   cd ~/Desktop/fj33-eats-monolito-modular
-  git checkout -f cap7-api-composition-no-api-gateway
+  git checkout -f cap6-api-composition-no-api-gateway
 
   cd ~/Desktop/fj33-eats-pagamento-service
-  git checkout -f cap7-api-composition-no-api-gateway
+  git checkout -f cap6-api-composition-no-api-gateway
 
   cd ~/Desktop/fj33-eats-distancia-service
-  git checkout -f cap7-api-composition-no-api-gateway
+  git checkout -f cap6-api-composition-no-api-gateway
   ```
 
   Reinicie o monólito e os serviços de pagamento e distância.
 
-3. Obtenha o código da branch `cap7-api-composition-no-api-gateway` do projeto `fj33-eats-ui`:
+3. Obtenha o código da branch `cap6-api-composition-no-api-gateway` do projeto `fj33-eats-ui`:
 
   ```sh
   cd ~/Desktop/fj33-eats-ui
-  git checkout -f cap7-api-composition-no-api-gateway
+  git checkout -f cap6-api-composition-no-api-gateway
   ```
 
   Com os serviços de distância e o monólito rodando, inicie o front-end com o comando `ng serve`.
@@ -734,6 +734,11 @@ Microservices devem ser independentes. O time de desenvolvimento de um microserv
 Para piorar o problema, raramente temos apenas uma UI. Além da Web, podemos ter UIs Mobile e/ou Desktop. Cada UI tem necessidades diferentes.  Por exemplo, uma UI Mobile vai ter menos espaço na tela e, portanto, vai exibir menos dados. Também no Mobile, há limitações de bateria e no plano de dados do usuário. E uma UI Mobile tem capacidades extra, como uma câmeras e GPS. Diferentes experiências de usuário requerem diferentes dados dos serviços e, em consequência, da API.
 
 Como resolver isso?
+
+<!--@note
+  Alexandre Aquiles: Coloquei as figuras de alguns posts da Netflix e o post do Sam Newman sobre BFF em uns slides:
+  https://slides.com/alexandreaquiles/apresentacao-api-gateway-composition-e-bff/fullscreen#/
+-->
 
 Poderíamos ter um time para a API. Só que esse time teria uma coordenação com cada _downstream service_ e também com cada UI.
 
@@ -944,11 +949,11 @@ Agora sim! Ao receber um status `201 Created`, depois de criar algum recurso em 
 
 2. Pare o API Gateway.
 
-  No projeto `fj33-api-gateway`, faça o checkout da branch `cap7-customizando-location-filter-do-zuul`:
+  No projeto `fj33-api-gateway`, faça o checkout da branch `cap6-customizando-location-filter-do-zuul`:
 
   ```sh
   cd ~/Desktop/fj33-api-gateway
-  git checkout -f cap7-customizando-location-filter-do-zuul
+  git checkout -f cap6-customizando-location-filter-do-zuul
   ```
 
   Execute a classe `ApiGatewayApplication`.
@@ -1038,7 +1043,7 @@ Agora sim! Ao receber um status `201 Created`, depois de criar algum recurso em 
 
   Deve ocorrer um erro `429 Too Many Requests`.
 
-4. Apague (ou desabilite comentando a anotação `@Component`) a classe `RateLimitingZuulFilter` para que não cause erros na aplicação no restante do curso.
+4. Apague (ou desabilite comentando a anotação `@Component`) a classe `RateLimitingZuulFilter` para que não cause erros na aplicação.
 
 ## Para saber mais: Micro front-ends
 
